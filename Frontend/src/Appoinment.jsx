@@ -17,7 +17,7 @@ export default function Appointment() {
     const [message, setMessage] = useState('');
 
     useEffect(() => {
-        axios.get("http://localhost:5000/api/appointments")
+        axios.get("http://192.168.0.104:5000/api/appointments")
             .then(response => {
                 console.log("Fetched appointments:", response.data);
             })
@@ -57,13 +57,18 @@ export default function Appointment() {
         };
 
         setLoading(true); // Start loading state
-        axios.post('http://localhost:5000/api/appointment', appointmentData)
+        axios.post('http://192.168.0.104:5000/api/appointment', appointmentData) // Ensure IP is correct
             .then(response => {
                 setMessage('Your appointment has been booked successfully!'); // Set success message
+                // Clear the form fields
+                setName('');
+                setEmail('');
+                setSelectDate(null);
+                setSelectTime(null);
                 setLoading(false); // End loading state
             })
             .catch(error => {
-                console.error('Error saving appointment:', error.response.data || error.message);
+                console.error('Error saving appointment:', error); // Log full error
                 setMessage('Failed to save appointment. Please try again.'); // Set error message
                 setLoading(false); // End loading state
             });
@@ -72,7 +77,7 @@ export default function Appointment() {
     return (
         <div className="Appointment">
             <div className="background-svg"></div>
-
+            {/* 
             <nav>
                 <ul>
                     <li><Link to='/'> Home</Link></li>
@@ -80,7 +85,7 @@ export default function Appointment() {
                         <Link to='/Appointment' className='home'>Appointment</Link>
                     </li>
                 </ul>
-            </nav>
+            </nav> */}
 
             <form onSubmit={handleSubmit}>
                 <label className="inputfiled">
@@ -90,6 +95,7 @@ export default function Appointment() {
                         value={name}
                         onChange={handleChangeName}
                         placeholder="Enter your name"
+                        required // Make it a required field
                     />
                 </label>
 
@@ -110,12 +116,14 @@ export default function Appointment() {
                             label="Select Date"
                             value={selectDate}
                             onChange={handleChangeDate}
+                            required // Make it a required field
                         />
                     </DemoContainer>
                     <TimeClock
                         label="Select Time"
                         value={selectTime}
                         onChange={handleChangeTime}
+                        required // Make it a required field
                     />
                 </LocalizationProvider>
 

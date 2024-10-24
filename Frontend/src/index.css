@@ -75,7 +75,7 @@ input:focus-within + .MuiTimeClock-root {
 }
 
 /* SVG background in the top left corner */
-.background-svg {
+/* .background-svg {
   background-image: url("../public/images/Group6.svg");
   background-repeat: no-repeat;
   background-position: center;
@@ -84,8 +84,8 @@ input:focus-within + .MuiTimeClock-root {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: -1; /* To place it behind other content */
-}
+  z-index: -1; To place it behind other content */
+/* } */
 
 nav {
   position: fixed;
@@ -169,126 +169,6 @@ nav ul li:hover {
   margin-top: 3rem;
 }
 
-/* Show-appointment */
-
-/* .table
-{
-  font-size: 5;
-  
-  /* width: 90%; */
-/* } */
-
-/* .row{
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  padding: 0%;
-
-} */
-
-/* .header
-{
-  font-weight: bold;
-  /* background-color: #f4f4f4; */
-/* width: 20%; */
-
-/* } 
-
-/* .cell
-{
-  display: inline-block;
-  width: 20%;
-  box-sizing: border-box;
-  padding: 8px;
-  border: 1px solid white;
-  font-size: 16px;
-  text-align: center;
-  /* display: flex; */
-/* justify-content: center; */
-/* }   */
-/* 
-.svg
-{
-    background-image: url('../public/images/Group6.svg');
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 265px;
-  height: 200px;
-  position: fixed;
-}
-
-.HomePage
-{
-  display: grid;
-  grid-template-columns: auto auto auto auto;
-  height: 100dvh;
-}
-
-.leftContainer
-{
-  color:red;
-  
-}
-
-.HomePage > svg > div {
-  background-color: rgba(255, 255, 255, 0.8);
-  text-align: center;
-  padding: 20px 0;
-  font-size: 30px;
-justify-content: ;
-} */
-/* NOte badhu navu usign display grid for 2 img */
-/* .HomePage {
-  background-image: url("../public/images/Group6.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 265px;
-  height: 208px;
-  position: fixed;
-} */
-
-/* .leftContainer {
-  display: flex;
-  justify-content: flex-end;
-  flex-direction: row-reverse;
-  justify-content: space-between;
-  margin-top: 70%;
-  margin-left: 36dvw;
-  gap: 14dvw;
-  /* thodu change kar margin & gap P tag ma & P tag ma j illustration rakhvanu */
-/* } */
-
-/* .leftContainer > .L1 {
-  background-image: url("../public/images/Saloon.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  margin-right: -95%;
-  margin-top: -12%;
-} */
-*/ .text {
-  display: flex;
-  flex-direction: column;
-  /* gap:3px; */
-  font-size: 40px;
-  text-wrap: nowrap;
-  margin-right: -3%;
-  line-height: 35%;
-}
-
-/* .LowerContainer {
-  background-image: url("../public/images/Vector11.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 100%;
-  height: 59dvh;
-  margin-left: -5%;
-  position: fixed;
-  margin-top: 0%;
-} */
-
 #green {
   color: green;
 }
@@ -298,7 +178,7 @@ justify-content: ;
   border-radius: 10px;
   box-sizing: border-box;
   padding: 10px 20px;
-  text-shadow: 2px 2px 4px rgba(156 77 77 / 80%),
+  text-shadow: 2px 2px 4px rgba(156, 77, 77, 0.8),
     0 0 10px rgba(255, 208, 224, 0.5),
     /* Glow effect with light theme color */ 0 0 20px rgba(255, 208, 224, 0.3);
   background-color: #c93765; /* Background with primary theme color */
@@ -320,43 +200,108 @@ justify-content: ;
   border-color: #ffd0e0; /* Border color also changes on hover */
 }
 
-#btn > a {
-  text-decoration: none;
-  color: #ffd0e0;
-}
-/* 
-
-ul
-{
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  justify-content: space-evenly;
-
-  text-decoration: none;
-  list-style: none;
-  
-
-}
-
-
-
-li
-{
-  
-  text-indent: 68dvw;
-  font-size: 30px;
-  letter-spacing: 2px;
-  color: #C93765;
-  
-} */
-
-/* .home
-{
-  margin-left: -400%;
-} */
-
 a {
   text-decoration: none;
   color: #c93765;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid #c93765; /* Use the same color as your border */
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #c93765;
+  color: white;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .Appointment {
+    padding: 5% 5%; /* More padding for smaller screens */
+  }
+
+  nav ul {
+    flex-direction: column; /* Stack navigation links */
+    align-items: flex-start; /* Align links to the left */
+  }
+
+  nav ul li {
+    font-size: 16px; /* Smaller font size */
+    padding: 8px 10px; /* Reduced padding */
+  }
+
+  .inputfiled input {
+    font-size: 14px; /* Smaller input text */
+  }
+
+  button {
+    font-size: 14px; /* Smaller button text */
+    padding: 8px 15px; /* Reduced padding */
+  }
+
+  /* Responsive Table Styles */
+  table {
+    display: block; /* Make the table block for responsive layout */
+    overflow-x: auto; /* Allow horizontal scrolling */
+    white-space: nowrap; /* Prevent text wrapping */
+  }
+
+  thead {
+    display: none; /* Hide the header on small screens */
+  }
+
+  tr {
+    display: block; /* Stack rows */
+    margin-bottom: 10px; /* Space between rows */
+  }
+
+  td {
+    display: flex; /* Make cells flexible */
+    justify-content: space-between; /* Space between label and value */
+    padding: 10px;
+    border: none; /* Remove border for a cleaner look */
+    background: #fff; /* Set a white background for cells */
+    position: relative; /* Position relative for pseudo elements */
+  }
+
+  td::before {
+    content: attr(data-label); /* Display the header label for each cell */
+    position: absolute;
+    left: 10px; /* Adjust position */
+    top: 10px; /* Adjust position */
+    font-weight: bold; /* Bold for emphasis */
+    color: #c93765; /* Color to match your theme */
+  }
+}
+
+@media (max-width: 480px) {
+  .Appointment {
+    max-width: 90%; /* Allow more width on small screens */
+    margin: 10% auto; /* Adjust margin */
+  }
+
+  nav ul {
+    margin: 10px 0; /* Adjust margin */
+  }
+
+  .inputfiled input {
+    font-size: 12px; /* Smaller input text */
+  }
+
+  button {
+    font-size: 12px; /* Smaller button text */
+    padding: 6px 12px; /* Reduced padding */
+  }
+
+  .table th,
+  .table td {
+    font-size: 14px; /* Smaller table text */
+  }
 }
