@@ -1,0 +1,362 @@
+body {
+  background-color: #ffd0e0;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.Appointment {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5% 2%;
+  max-width: 600px;
+  margin: 5% auto;
+  background-color: #ffd0e0; /* Light theme color */
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(201, 55, 101, 0.5); /* Shadow with darker theme color */
+  border: 2px solid #c93765; /* Border with primary theme color */
+}
+
+.inputfiled {
+  width: 100%;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.inputfiled label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.inputfiled input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.MuiDatePicker-root,
+.MuiTimeClock-root {
+  width: 100%;
+}
+
+.MuiTimeClock-root {
+  margin-top: 20px;
+  display: none; /* Initially hidden */
+}
+
+.Appointment form {
+  width: 100%;
+}
+
+/* Show TimeClock when input is focused or clicked */
+input:focus + .MuiTimeClock-root,
+input:focus-within + .MuiTimeClock-root {
+  display: block;
+}
+
+/* SVG background in the top left corner */
+.background-svg {
+  background-image: url("../public/images/Group6.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 265px;
+  height: 207px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1; /* To place it behind other content */
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin: 20px;
+  z-index: 1000;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 15px;
+}
+
+nav ul li {
+  font-size: 18px;
+  font-weight: bold;
+  color: #c93765;
+  cursor: pointer;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+nav ul li:hover {
+  background-color: #ffd0e0;
+  color: #282828;
+}
+
+.home {
+  color: #ffd0e0;
+  background-color: #c93765;
+  border-radius: 5px;
+  padding: 10px 15px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.table th,
+.table td {
+  border: 2px solid #c93765;
+  padding: 10px;
+  text-align: left;
+}
+
+.table th {
+  background-color: #c93765;
+  color: white;
+}
+
+.table td {
+  border-color: #ffd0e0;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #f9f9f9;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mb-4 {
+  margin-bottom: 1.5rem;
+}
+
+.mt-5 {
+  margin-top: 3rem;
+}
+
+/* Show-appointment */
+
+/* .table
+{
+  font-size: 5;
+  
+  /* width: 90%; */
+/* } */
+
+/* .row{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0%;
+
+} */
+
+/* .header
+{
+  font-weight: bold;
+  /* background-color: #f4f4f4; */
+/* width: 20%; */
+
+/* } 
+
+/* .cell
+{
+  display: inline-block;
+  width: 20%;
+  box-sizing: border-box;
+  padding: 8px;
+  border: 1px solid white;
+  font-size: 16px;
+  text-align: center;
+  /* display: flex; */
+/* justify-content: center; */
+/* }   */
+/* 
+.svg
+{
+    background-image: url('../public/images/Group6.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 265px;
+  height: 200px;
+  position: fixed;
+}
+
+.HomePage
+{
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  height: 100dvh;
+}
+
+.leftContainer
+{
+  color:red;
+  
+}
+
+.HomePage > svg > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+justify-content: ;
+} */
+/* NOte badhu navu usign display grid for 2 img */
+/* .HomePage {
+  background-image: url("../public/images/Group6.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 265px;
+  height: 208px;
+  position: fixed;
+} */
+
+/* .leftContainer {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  margin-top: 70%;
+  margin-left: 36dvw;
+  gap: 14dvw;
+  /* thodu change kar margin & gap P tag ma & P tag ma j illustration rakhvanu */
+/* } */
+
+/* .leftContainer > .L1 {
+  background-image: url("../public/images/Saloon.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  margin-right: -95%;
+  margin-top: -12%;
+} */
+*/ .text {
+  display: flex;
+  flex-direction: column;
+  /* gap:3px; */
+  font-size: 40px;
+  text-wrap: nowrap;
+  margin-right: -3%;
+  line-height: 35%;
+}
+
+/* .LowerContainer {
+  background-image: url("../public/images/Vector11.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 59dvh;
+  margin-left: -5%;
+  position: fixed;
+  margin-top: 0%;
+} */
+
+#green {
+  color: green;
+}
+
+#btn {
+  border: 2px solid #c93765; /* Border with primary theme color */
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 10px 20px;
+  text-shadow: 2px 2px 4px rgba(156 77 77 / 80%),
+    0 0 10px rgba(255, 208, 224, 0.5),
+    /* Glow effect with light theme color */ 0 0 20px rgba(255, 208, 224, 0.3);
+  background-color: #c93765; /* Background with primary theme color */
+  color: #ffd0e0 !important; /* Text color matching the light theme color */
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+}
+
+#btn:hover {
+  box-shadow: 0 0 10px rgba(255, 208, 224, 0.8),
+    0 0 20px rgba(255, 208, 224, 0.6), 0 0 30px rgba(255, 208, 224, 0.4);
+  color: #c93765; /* Text color changes to the primary theme color on hover */
+  background-color: #ffd0e0; /* Background color changes to the light theme color on hover */
+  border-color: #ffd0e0; /* Border color also changes on hover */
+}
+
+#btn > a {
+  text-decoration: none;
+  color: #ffd0e0;
+}
+/* 
+
+ul
+{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  justify-content: space-evenly;
+
+  text-decoration: none;
+  list-style: none;
+  
+
+}
+
+
+
+li
+{
+  
+  text-indent: 68dvw;
+  font-size: 30px;
+  letter-spacing: 2px;
+  color: #C93765;
+  
+} */
+
+/* .home
+{
+  margin-left: -400%;
+} */
+
+a {
+  text-decoration: none;
+  color: #c93765;
+}
