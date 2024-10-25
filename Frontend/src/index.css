@@ -251,6 +251,7 @@ th {
     display: block; /* Make the table block for responsive layout */
     overflow-x: auto; /* Allow horizontal scrolling */
     white-space: nowrap; /* Prevent text wrapping */
+    justify-content: center;
   }
 
   thead {
@@ -265,6 +266,7 @@ th {
   td {
     display: flex; /* Make cells flexible */
     justify-content: space-between; /* Space between label and value */
+
     padding: 10px;
     border: none; /* Remove border for a cleaner look */
     background: #fff; /* Set a white background for cells */

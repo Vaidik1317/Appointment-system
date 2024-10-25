@@ -1,32 +1,25 @@
 const nodemailer = require("nodemailer");
 
-// Setup nodemailer transporter with hardcoded credentials
+// Create a transporter object using your SMTP configuration
 const transporter = nodemailer.createTransport({
-  service: "gmail",
+  service: "Gmail", // Gmail or your preferred email service
   auth: {
-    user: "221243107010.ce@gmail.com", // Hardcoded email address
-    pass: "bilimora123", // Hardcoded password
+    user: "221243107010.ce@gmail.com", // Your email
+    pass: "bilimora123", // App-specific password or email password
   },
-  logger: true, // Log information about the transport process
-  debug: true, // Show debug output
 });
 
-// Function to send email
-const sendEmail = (to, subject, text) => {
+// Define the sendEmail function
+const sendEmail = (emailData) => {
   const mailOptions = {
-    from: "221243107010.ce@gmail.com", // Hardcoded email address
-    to,
-    subject,
-    text,
+    from: "221243107010.ce@gmail.com",
+    to: emailData.to,
+    subject: emailData.subject,
+    text: emailData.text,
   };
 
-  transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-      console.log("Error sending email:", error);
-    } else {
-      console.log("Email sent:", info.response);
-    }
-  });
+  return transporter.sendMail(mailOptions);
 };
 
-module.exports = { sendEmail };
+// Export the sendEmail function
+module.exports = sendEmail;
